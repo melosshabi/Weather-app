@@ -29,7 +29,7 @@ document.querySelector(".search-btn").addEventListener('click', ()=>{
     weather.search();
 })
 
-document.querySelector(".search-bar").addEventListener('keyup', event =>{
+document.querySelector(".search-bar").addEventListener('keyup', key =>{
     if(event.key == "Enter")
     {
         weather.search();
