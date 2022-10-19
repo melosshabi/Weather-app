@@ -11,6 +11,7 @@ let weather = {
         const { temp, humidity } = data.main;
         const { speed } = data.wind;
         const { icon, description } = data.weather[0];
+        Math.round(temp);
         document.querySelector('.city').innerText = name;
         document.querySelector('.temp').innerText = temp + "°C";
         document.querySelector('.icon').src=`http://openweathermap.org/img/w/${icon}.png`;
@@ -35,5 +36,12 @@ document.querySelector(".search-bar").addEventListener('keyup', event =>{
         weather.search();
     }
 })
-weather.fetchWeather("Melbourne");
 
+let cities = ["London", "Melbourne", "Texas", "Toronto", "New Jersey", "Tokyo", "New York", "Maldives"]
+
+function randomInd(){
+    random = Math.floor(Math.random() * cities.length);
+    return random;
+}
+randomInd();
+weather.fetchWeather(cities[random]);
