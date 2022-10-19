@@ -11,9 +11,9 @@ let weather = {
         const { temp, humidity } = data.main;
         const { speed } = data.wind;
         const { icon, description } = data.weather[0];
-        Math.round(temp);
+        floored = Math.floor(temp);
         document.querySelector('.city').innerText = name;
-        document.querySelector('.temp').innerText = temp + "°C";
+        document.querySelector('.temp').innerText = floored + "°C";
         document.querySelector('.icon').src=`http://openweathermap.org/img/w/${icon}.png`;
         document.querySelector('.description').innerText = description;
         document.querySelector('.humidity').innerText = "Humidity " + humidity + "%";
